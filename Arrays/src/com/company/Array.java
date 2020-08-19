@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Array {
     private int[] items;
     private int count;
@@ -37,4 +39,31 @@ public class Array {
                 return i;
         return -1;
     }
+
+    public int max(){
+        int max = 0;
+        for (int i = 0; i < count; i++) {
+            if (items[i] > max) {
+                max = items[i];
+            }
+        }return max;
+    }
+
+    public void reverse(){
+        for (int left = 0, right = count-1; left < right; left ++, right--) {
+            int temp = items[left];
+            items[left] = items[right];
+            items[right] = temp;
+        }
+    }
+
+    public void insertAt(int item, int index) {
+        insert(0);
+        for (int i = count-1; i > index; i--) {
+            items[i] = items[i-1];
+        }
+        items[index] = item;
+    }
+
+    
 }

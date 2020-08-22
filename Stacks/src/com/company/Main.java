@@ -3,13 +3,12 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        String str = "{{1+[2]{}(<(>)}}";
+        Stack stack =new Stack();
+        stack.push(12);
+        stack.push(13);
+        stack.push(342);
+        stack.push(43);
 
-//        StringReverser reverser = new StringReverser();
-//        var result = reverser.reverse(str);
-
-        Expression expression = new Expression();
-        System.out.println(expression.isBalanced(str));
-
+        System.out.println(stack.peek());
     }
 }

@@ -128,4 +128,30 @@ public class LinkedList {
         last.next = null;
         first = previous;
     }
+
+//    public int getKthFromTheEnd(int k) {          //My solution
+//        if (k > size() || k <= 0) throw new IllegalArgumentException();
+//
+//        var current = first;
+//        for (int i = 1; i <= size() - k; i++ ) {
+//            current = current.next;
+//        }
+//        return current.value;
+//    }
+
+    public int getKthFromTheEnd(int k) {
+        if (isEmpty()) throw new IllegalArgumentException();
+        var a = first;
+        var b = first;
+
+        for (int i = 0; i < k - 1; i++) {
+            b = b.next;
+            if (b == null) throw new NullPointerException();
+        }
+        while (b != last) {
+            a = a.next;
+            b = b.next;
+        }
+        return a.value;
+    }
     }
